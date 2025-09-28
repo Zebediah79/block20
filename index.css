@@ -28,26 +28,6 @@ div {
     grid-template-columns: 1fr 1fr;
   }
 }
-.lineup {
-  list-style: none;
-  display: grid;
-  gap: 1ch;
-}
-
-.lineup a {
-  color: unset;
-  text-decoration: unset;
-
-  display: block;
-  width: 100%;
-  border: 1px solid #eee;
-  border-radius: 0.25rem;
-  padding: 1ch;
-}
-
-.lineup a:hover {
-  background: #eee;
-}
 
 .event {
   display: grid;
@@ -69,12 +49,22 @@ div {
 }
 
 .upcoming li a {
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 0.25rem;
+  padding: 1ch;
   text-decoration: none;
   color: #0077cc;
   display: block;
   padding: 0.5rem 0;
 }
 
-.details p {
-  margin: 0.5rem 0;
+.upcoming a:hover {
+  background: #eee;
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+.upcoming li.selected {
+  font-weight: bold;
 }
