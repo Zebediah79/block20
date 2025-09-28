@@ -66,6 +66,11 @@ async function getRSVPs() {
 // single part from the API.
 function EventListItem(event) {
   const $li = document.createElement("li");
+
+  if (event.id === selectedEvent?.id) {
+    $li.classList.add("selected");
+  }
+
   $li.innerHTML = `<a href = #selected>${event.name}</a>`;
   $li.addEventListener("click", async function () {
     await getEvent(event.id);
@@ -76,7 +81,6 @@ function EventListItem(event) {
 // Function to render list of party names
 function EventList() {
   const $ul = document.createElement("ul");
-  $ul.classList.add("lineup");
   const $events = events.map(EventListItem);
   $ul.replaceChildren(...$events);
   return $ul;
